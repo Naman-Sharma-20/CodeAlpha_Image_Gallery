@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" crossorigin="anonymous">
+    <script src="script.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+        <a class="navbar-brand" href="">E-albo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-contact" href="#ram">About us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="back">
+        <div class="intro">
+            <table>
+                <tr>
+                    <th><h1 class="e">E-albo</h1></th>
+                    <th><h2 class="align">Surf from thousand of images <br>and pick your favourite.</h2></th>
+                </tr>
+                <tr>
+                    <td colspan="2"><h3 class="gal">Your virtual Gallery.</h3></td>
+                </tr>
+            </table>
+            <br>
+            <div class="menu">
+                <button class="button-36" onclick="filterImages('all')">All</button>
+                <button class="button-36" onclick="filterImages('Sports')">Sports</button>
+                <button class="button-36" onclick="filterImages('SUV')">SUV</button>
+                <button class="button-36" onclick="filterImages('Sedan')">Sedan</button>
+            </div>
+        </div>
+        <div class="search">
+            <div class="row height d-flex justify-content-center align-items-center">
+                <div class="col-md-6">
+                    <div class="form">
+                        <i class="fa fa-search"></i>
+                        <input type="text" id="searchTerm" class="form-control form-input" placeholder="Search anything..." onkeyup="searchImages()">
+                        <span class="left-pan"><i class="fa fa-microphone"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="Gallery">
+        <div class="Image Sports">
+            <img src="Images/Sports/2.jpg" alt="dodge" data-keyword="dodge">
+            <img src="Images/Sports/4.jpg" alt="lamborghini" data-keyword="lamborghini">
+            <img src="iImages/Sports/5.jpg" alt="audi r8" data-keyword="audi r8">
+            <img src="images/Sports/8.jpg" alt="aston martin" data-keyword="aston martin astonmartin">
+            <img src="images/Sports/12.jpg" alt="audi r8" data-keyword="audi r8">
+            <img src="images/Sports/22.jpg" alt="mclaren" data-keyword="mclaren">
+            <img src="Images/Sports/23.jpg" alt="porsche" data-keyword="porsche gt 2rs">
+        </div>
+        <div class="Image SUV">
+            <img src="images/SUV/9.jpg" alt="audi" data-keyword="audi">
+            <img src="images/SUV/13.jpg" alt="bmw" data-keyword="bmw">
+            <img src="images/SUV/14.jpg" alt="lamborghini" data-keyword="lamborghini urus">
+            <img src="images/SUV/15.jpg" alt="gmc" data-keyword="gmc">
+            <img src="images/SUV/16.jpg" alt="audi" data-keyword="audi q7">
+            <img src="Images/SUV/24.jpg" alt="Cadillac" data-keyword="cadillac escalade">
+        </div>
+        <div class="Image Sedan">
+            <img src="Images/Sedan/1.jpg" alt="audi" data-keyword="audi r8">
+            <img src="Images/Sedan/3.jpg" alt="hyundai" data-keyword="hyundai">
+            <img src="Images/Sedan/6.jpg" alt="mercedes amg" data-keyword="mercedes amg">
+            <img src="images/Sedan/7.jpg" alt="bmw" data-keyword="bmw">
+            <img src="images/Sedan/10.jpg" alt="bmw" data-keyword="bmw">
+            <img src="images/Sedan/11.jpg" alt="bmw" data-keyword="bmw">
+            <img src="images/Sedan/17.jpg" alt="hyundai" data-keyword="hyundai verna">
+            <img src="images/Sedan/18.jpg" alt="lexus" data-keyword="lexus">
+            <img src="images/Sedan/19.jpg" alt="genesis" data-keyword="genesis g80">
+            <img src="images/Sedan/20.jpg" alt="volvo" data-keyword="volvo">
+            <img src="images/Sedan/21.jpg" alt="bmw" data-keyword="bmw i7">
+        </div>
+    </div>
+    
+    <div id="popup" class="popup">
+        <button id="prev" class = "popup-nav hell backo" onclick="updateImage()">PREV</button>
+        <span class="close" onclick="closePopup()">&times;</span>
+        <img id="popup-image" src="" alt="Popup Image">
+        <button id="next" class = "popup-nav hell next" onclick="updateImage()">NEXT</button>
+    </div>>
+
+    <br>
+
+    <div class="bottom" id="ram">
+        <div class="press">
+            <img class="logo" src="images/techcrunch.png" alt="tc-logo">
+            <img class="logo" src="images/tnw.png" alt="tnw-logo">
+            <img class="logo" src="images/bizinsider.png" alt="biz-insider-logo">
+            <img class="logo" src="images/mashable.png" alt="mashable-logo">
+        </div>
+    
+        <br>
+    
+    <div class="footer">
+            <i class=" social-icon fa-brands fa-instagram fa-3x" href="https://www.instagram.com/naman_._s?igsh=aG5lajkzbTNieGR6"></i>
+            <i class=" social-icon fa-brands fa-twitter fa-3x"></i>
+            <i class=" social-icon fa-brands fa-linkedin-in fa-3x" href="https://www.linkedin.com/in/naman-sharma-3a21ba283?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"></i>
+            <i class=" social-icon fa-solid fa-envelope fa-3x"></i>
+            <p>© Copyright E-albo</p>
+    </div>
+        </div>
+
+        <script src="script.js"></script>
+</body>
+</html>
